@@ -21,3 +21,6 @@ Commands =
 
 chrome.runtime.onMessageExternal.addListener (request) ->
   Commands[request.name]? request
+
+for own command of Commands
+  console.log "map X sendMessage name=#{command} extension=#{chrome.runtime.id}"
